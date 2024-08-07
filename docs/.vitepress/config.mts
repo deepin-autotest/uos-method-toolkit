@@ -1,6 +1,5 @@
 import {defineConfig} from 'vitepress'
-import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
-import {version} from "../../package.json"
+import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -15,13 +14,14 @@ export default defineConfig({
     vite: {
         publicDir: "assets",
         plugins: [
-        // add plugin
-        AutoSidebar({
-          // You can also set options to adjust sidebar data
-          // see option document below
-          prefix: '.', collapsed: true
-        })
-      ]
+            // https://vitepress-auto-sidebar-plugin.netlify.app/
+            AutoSidebar({
+                // You can also set options to adjust sidebar data
+                // see option document below
+                collapsed: true,
+                deletePrefix: "1A",
+            })
+        ]
     },
 
     themeConfig: {
@@ -29,7 +29,8 @@ export default defineConfig({
         siteTitle: "UMTK",
         nav: [
             {text: '🏠首页', link: '/index'},
-            {text: "UTMK", link: '/umtk/README.md'},
+            {text: "UTMK", link: '/umtk/1A简介.md'},
+
             {text: "SIG", link: '/SIG.md'},
         ],
         search: {
